@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/routes/index.js"],"names":["router","use"],"mappings":";;;;;;AAAA;;AACA;;;;;;AAGA,MAAMA,SAAS,sBAAf;AACAA,OAAOC,GAAP,CAAW,QAAX;kBACeD,M","file":"index.js","sourcesContent":["import {Router} from 'express';\nimport polls from './polls';\n\n\nconst router = Router();\nrouter.use('/polls',polls);\nexport default router;"]}

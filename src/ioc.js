@@ -1,0 +1,10 @@
+import Container from './util/container';
+import {PollService,VoteService,UserService} from "./services/index";
+import {getModels} from "./models/index";
+import {getSqliteConnection} from "./util/sqlconnection";
+const container = new Container();
+container.singleton('db',getSqliteConnection(`${__dirname}/data/polls.sqlite`));
+container.singleton('models',getModels(container.get('db')));
+const pollService = new PollService(container.get('models'));
+container.singleton('service.poll',pollService);
+export default container;
